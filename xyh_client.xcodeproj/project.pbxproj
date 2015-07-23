@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39C91B5F5E680059B658 /* AppDelegate.swift */; };
 		182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182D39CD1B5F5E680059B658 /* Main.storyboard */; };
-		182D39D11B5F5E680059B658 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182D39D01B5F5E680059B658 /* Images.xcassets */; };
 		182D39D41B5F5E680059B658 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D39D21B5F5E680059B658 /* LaunchScreen.xib */; };
 		182D39E01B5F5E680059B658 /* xyh_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39DF1B5F5E680059B658 /* xyh_clientTests.swift */; };
 		182D39EE1B5F63B40059B658 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D39ED1B5F63B40059B658 /* SWRevealViewController.m */; };
@@ -19,6 +18,12 @@
 		182D39FB1B5F96100059B658 /* hamburgerbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 182D39FA1B5F96100059B658 /* hamburgerbutton.png */; };
 		182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 182D39FC1B5F97E90059B658 /* LaunchImage.png */; };
 		182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D3A001B5FA1900059B658 /* SearchViewController.swift */; };
+		18E4DC0A1B60A1EB00891D2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E4DC091B60A1EB00891D2A /* Images.xcassets */; };
+		18E4DC0C1B60AC9500891D2A /* TableNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC0B1B60AC9500891D2A /* TableNavigation.swift */; };
+		18E4DC0E1B60AE7300891D2A /* LoginNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC0D1B60AE7300891D2A /* LoginNavigation.swift */; };
+		18E4DC101B60B02500891D2A /* RegisterNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC0F1B60B02500891D2A /* RegisterNavigation.swift */; };
+		18E4DC121B60B0E800891D2A /* SearchNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC111B60B0E800891D2A /* SearchNavigation.swift */; };
+		18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC131B60B7D200891D2A /* MenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 		182D39C81B5F5E680059B658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182D39C91B5F5E680059B658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182D39CE1B5F5E680059B658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		182D39D01B5F5E680059B658 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		182D39D31B5F5E680059B658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		182D39D91B5F5E680059B658 /* xyh_clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xyh_clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182D39DE1B5F5E680059B658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +54,12 @@
 		182D39FA1B5F96100059B658 /* hamburgerbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburgerbutton.png; sourceTree = "<group>"; };
 		182D39FC1B5F97E90059B658 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		182D3A001B5FA1900059B658 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		18E4DC091B60A1EB00891D2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18E4DC0B1B60AC9500891D2A /* TableNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNavigation.swift; sourceTree = "<group>"; };
+		18E4DC0D1B60AE7300891D2A /* LoginNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigation.swift; sourceTree = "<group>"; };
+		18E4DC0F1B60B02500891D2A /* RegisterNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterNavigation.swift; sourceTree = "<group>"; };
+		18E4DC111B60B0E800891D2A /* SearchNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNavigation.swift; sourceTree = "<group>"; };
+		18E4DC131B60B7D200891D2A /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,13 +105,18 @@
 				182D39EA1B5F63320059B658 /* SWRevealViewController */,
 				182D39C91B5F5E680059B658 /* AppDelegate.swift */,
 				182D39CD1B5F5E680059B658 /* Main.storyboard */,
-				182D39D01B5F5E680059B658 /* Images.xcassets */,
 				182D39D21B5F5E680059B658 /* LaunchScreen.xib */,
 				182D39C71B5F5E680059B658 /* Supporting Files */,
 				182D39F11B5F6C470059B658 /* TableViewController.swift */,
 				182D39F31B5F7E120059B658 /* RegisterViewController.swift */,
 				182D39F51B5F7E210059B658 /* LoginViewController.swift */,
 				182D3A001B5FA1900059B658 /* SearchViewController.swift */,
+				18E4DC091B60A1EB00891D2A /* Images.xcassets */,
+				18E4DC0B1B60AC9500891D2A /* TableNavigation.swift */,
+				18E4DC0D1B60AE7300891D2A /* LoginNavigation.swift */,
+				18E4DC0F1B60B02500891D2A /* RegisterNavigation.swift */,
+				18E4DC111B60B0E800891D2A /* SearchNavigation.swift */,
+				18E4DC131B60B7D200891D2A /* MenuController.swift */,
 			);
 			path = xyh_client;
 			sourceTree = "<group>";
@@ -231,9 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */,
+				18E4DC0A1B60A1EB00891D2A /* Images.xcassets in Resources */,
 				182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */,
 				182D39D41B5F5E680059B658 /* LaunchScreen.xib in Resources */,
-				182D39D11B5F5E680059B658 /* Images.xcassets in Resources */,
 				182D39FB1B5F96100059B658 /* hamburgerbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,11 +268,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				182D39F61B5F7E210059B658 /* LoginViewController.swift in Sources */,
+				18E4DC0E1B60AE7300891D2A /* LoginNavigation.swift in Sources */,
 				182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */,
 				182D39F41B5F7E120059B658 /* RegisterViewController.swift in Sources */,
+				18E4DC101B60B02500891D2A /* RegisterNavigation.swift in Sources */,
+				18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */,
 				182D39F21B5F6C470059B658 /* TableViewController.swift in Sources */,
 				182D39EE1B5F63B40059B658 /* SWRevealViewController.m in Sources */,
+				18E4DC121B60B0E800891D2A /* SearchNavigation.swift in Sources */,
 				182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */,
+				18E4DC0C1B60AC9500891D2A /* TableNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +472,7 @@
 				182D39E51B5F5E680059B658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		182D39E61B5F5E680059B658 /* Build configuration list for PBXNativeTarget "xyh_clientTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +481,7 @@
 				182D39E81B5F5E680059B658 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
