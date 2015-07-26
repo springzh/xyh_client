@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -31,22 +32,38 @@
         <scene sceneID="CWY-vY-bQT">
             <objects>
                 <tableViewController storyboardIdentifier="list" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KUw-QP-vwR" customClass="TableViewController" customModule="xyh_client" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FIc-aV-QuW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" id="FIc-aV-QuW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="news" id="yFe-Ex-4Ux">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" rowHeight="42" id="yFe-Ex-4Ux" customClass="NewsListCell" customModule="xyh_client" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yFe-Ex-4Ux" id="ikJ-DH-FT9">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssd-cc-HKh">
+                                            <rect key="frame" x="26" y="8" width="182" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="182" id="Pgn-uU-cJv"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ssd-cc-HKh" secondAttribute="bottom" constant="4.5" id="QfI-eZ-6Uy"/>
+                                        <constraint firstItem="ssd-cc-HKh" firstAttribute="leading" secondItem="ikJ-DH-FT9" secondAttribute="leadingMargin" constant="18" id="bfc-Ka-dio"/>
+                                        <constraint firstItem="ssd-cc-HKh" firstAttribute="top" secondItem="ikJ-DH-FT9" secondAttribute="topMargin" id="qiW-y5-M64"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="KUw-QP-vwR" id="pcG-Ez-A7E"/>
-                            <outlet property="delegate" destination="KUw-QP-vwR" id="7F8-HG-KHD"/>
+                            <outlet property="dataSource" destination="KUw-QP-vwR" id="pFY-ps-FIN"/>
+                            <outlet property="delegate" destination="KUw-QP-vwR" id="v5v-Em-QR6"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="享优惠" id="EgK-3l-iyt">
@@ -62,6 +79,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="5vg-cj-dPX" id="Fmn-dl-Yl9"/>
+                        <outlet property="newsList" destination="FIc-aV-QuW" id="Zzt-fN-E9i"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwM-FG-oxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,8 +404,6 @@
         <!--登录-->
         <scene sceneID="ksu-zH-jGG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2QZ-Ud-lpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="erd-UM-Bkt" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController id="fnN-de-Luk" customClass="LoginViewController" customModule="xyh_client" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q8f-yb-SYz"/>
@@ -469,6 +485,8 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2QZ-Ud-lpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="erd-UM-Bkt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1875" y="-1092"/>
         </scene>
@@ -583,7 +601,6 @@
         <!--登录导航-->
         <scene sceneID="KJr-AE-m3Y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oKz-GP-Dbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController title="登录导航" automaticallyAdjustsScrollViewInsets="NO" id="cB7-3E-UKr" customClass="LoginNavigation" customModule="xyh_client" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" id="ish-Rs-yag"/>
                     <toolbarItems/>
@@ -597,6 +614,7 @@
                         <segue destination="fnN-de-Luk" kind="relationship" relationship="rootViewController" id="qeu-eO-Eu7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKz-GP-Dbi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1158" y="-1092"/>
         </scene>
