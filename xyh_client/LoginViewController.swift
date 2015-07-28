@@ -8,8 +8,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIAlertViewDelegate {
     
+    @IBOutlet weak var loginEmail: UITextField!
+    @IBOutlet weak var loginPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,4 +24,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func backToLoginView(segue:UIStoryboardSegue) {}
     
+    @IBAction func loginSubmit(sender: AnyObject) {
+        if(loginEmail.text == "" || loginPassword.text == ""){
+            let alert = UIAlertView()
+            alert.delegate = self
+            alert.title = "提示"
+            alert.message = "登录信息不能为空"
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+    }
 }

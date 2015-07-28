@@ -8,8 +8,11 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController,UIAlertViewDelegate {
     
+    @IBOutlet weak var registerNickname: UITextField!
+    @IBOutlet weak var registerEmail: UITextField!
+    @IBOutlet weak var registerPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,5 +23,16 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func registerSubmit(sender: AnyObject) {
+        if(registerNickname.text == "" || registerEmail.text == "" || registerPassword.text == ""){
+            let alert = UIAlertView()
+            alert.delegate = self
+            alert.title = "提示"
+            alert.message = "注册信息不能为空"
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
+        
+    }
     
 }

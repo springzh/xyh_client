@@ -9,15 +9,29 @@
 import UIKit
 
 class PostServices{
-    var dataArray:NSMutableArray = NSMutableArray()
+    var dataArray: NSMutableArray = NSMutableArray()
     
-    func updateNews(callback:(NSArray)->()){
-        let url = "http://xiangyouhui.cn/api/v1/articles"
-        getNewsJson(url, callback: callback)
+    
+    func getNewJson(url:String,callback:(NSDictionary)->()) {
+        let manager = AFHTTPRequestOperationManager()
+        
+        var aobject = manager.GET(url,
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,
+                responseObject: AnyObject!) in
+                var json = responseObject as NSDictionary
+                var list = json["news"] as NSDictionary
+                callback(list)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,
+                error: NSError!) in
+                println("Error: " + error.localizedDescription)}
+        )
+        
     }
+
     
-    
-    func getNewsJson(url:String, callback:(NSArray)->()) {
+    func getNewsListJson(url:String,callback:(NSArray)->()) {
         let manager = AFHTTPRequestOperationManager()
         
         var aobject = manager.GET(url,
@@ -34,3 +48,25 @@ class PostServices{
         
     }
 }
+
+class NewsInit {
+    var newsId: Int!
+    var newsTitle: NSString!
+    var newsContent: NSString!
+    init(id:Int, title:NSString, content:NSString){
+        newsId = id
+        newsTitle = title
+        newsContent = content
+    }
+}
+
+class PostInit {
+    var newsId: Int!
+    var newsTitle: NSString!
+    init(id: Int,title: NSString){
+        newsId = id
+        newsTitle = title
+    }
+}
+
+
