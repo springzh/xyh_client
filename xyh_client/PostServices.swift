@@ -9,13 +9,12 @@
 import UIKit
 
 class PostServices{
-    var dataArray: NSMutableArray = NSMutableArray()
     
-    
+    //请求获取资讯详情
     func getNewJson(url:String,callback:(NSDictionary)->()) {
         let manager = AFHTTPRequestOperationManager()
         
-        var aobject = manager.GET(url,
+        manager.GET(url,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
@@ -29,12 +28,28 @@ class PostServices{
         )
         
     }
-
     
+    //请求提交用户信息
+    func userDataPost(url:String,params:NSDictionary,callback:(NSDictionary)->()){
+        let manager = AFHTTPRequestOperationManager()
+        manager.GET(url,
+            parameters: params,
+            success: { (operation: AFHTTPRequestOperation!,
+                responseObject: AnyObject!) in
+                var json = responseObject as NSDictionary
+                callback(json)
+            },
+            failure: { (operation: AFHTTPRequestOperation!,
+                error: NSError!) in
+                println("Error: " + error.localizedDescription)}
+        )
+    }
+
+    //请求获取资讯列表
     func getNewsListJson(url:String,callback:(NSArray)->()) {
         let manager = AFHTTPRequestOperationManager()
         
-        var aobject = manager.GET(url,
+        manager.GET(url,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in

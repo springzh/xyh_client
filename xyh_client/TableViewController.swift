@@ -31,7 +31,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         self.updateNews{
             (response) in
             self.loadPosts(response as NSArray)
-            self.allJson = response as NSArray
+            self.allJson = (response as NSArray)
             
         }
         // Do any additional setup after loading the view, typically from a nib.
@@ -113,12 +113,20 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     }
     
     func refreshPosts(posts:NSArray){
-        for post in posts{
-            var title = post["news_title"]! as NSString
-            var idStr = post["news_id"]! as String
+        self.postsCollection = [PostInit]()
+        for(var i = 0; i < 20; i++){
+            var title = posts[i]["news_title"] as NSString
+            var idStr = posts[i]["news_id"] as String
             var id = idStr.toInt()
             var json = PostInit(id: id!, title: title)
-            postsCollection.append(json)
+            self.postsCollection.append(json)
+            dispatch_async(dispatch_get_main_queue()){
+                self.refreshControl?.endRefreshing()
+                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                self.newsList.reloadData()
+                self.tableFooterView.hidden = false
+                self.loadMoreBtn.hidden = false
+            }
         }
     }
     
@@ -126,18 +134,10 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         if self.refreshControl?.refreshing == true {
             self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading...")
         }
-        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.updateNews{
-                    (response) in
-                    self.refreshPosts(response as NSArray)
-                }
-                sleep(1)
-                self.refreshControl?.endRefreshing()
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                self.tableView.reloadData()
-            })
-        })
+        self.updateNews{
+            (response) in
+            self.refreshPosts(response as NSArray)
+        }
     }
     
     
