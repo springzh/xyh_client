@@ -29,11 +29,11 @@ class NewsViewController: UIViewController {
     }
     
     func loadPost(news:NSDictionary){
-        titleLabel.text = news["news_title"] as? NSString
+        titleLabel.text = news["news_title"] as? String
         titleLabel.numberOfLines = 2
         titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         titleLabel.sizeToFit()
-        var content = news["news_content"] as NSString
+        var content = news["news_content"] as String
         webView.loadHTMLString(content, baseURL: nil)
     }
     

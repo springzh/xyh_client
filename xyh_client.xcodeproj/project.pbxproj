@@ -20,6 +20,7 @@
 		182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D3A001B5FA1900059B658 /* SearchViewController.swift */; };
 		185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185705E31B65D9D4009BC0B4 /* NewsViewController.swift */; };
 		185EBB4EDA67E430B47D566F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A585EA81789F404348EE0C55 /* libPods.a */; };
+		18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B817471B69C2AF0075096D /* TableViewCell.swift */; };
 		18CF446B1B64B3650004501C /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF446A1B64B3650004501C /* PostServices.swift */; };
 		18E4DC0A1B60A1EB00891D2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18E4DC091B60A1EB00891D2A /* Images.xcassets */; };
 		18E4DC0C1B60AC9500891D2A /* TableNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E4DC0B1B60AC9500891D2A /* TableNavigation.swift */; };
@@ -58,6 +59,7 @@
 		182D39FC1B5F97E90059B658 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		182D3A001B5FA1900059B658 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		185705E31B65D9D4009BC0B4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		18B817471B69C2AF0075096D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		18CF446A1B64B3650004501C /* PostServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
 		18E4DC091B60A1EB00891D2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18E4DC0B1B60AC9500891D2A /* TableNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNavigation.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				18E4DC131B60B7D200891D2A /* MenuController.swift */,
 				18CF446A1B64B3650004501C /* PostServices.swift */,
 				185705E31B65D9D4009BC0B4 /* NewsViewController.swift */,
+				18B817471B69C2AF0075096D /* TableViewCell.swift */,
 			);
 			path = xyh_client;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */,
 				18CF446B1B64B3650004501C /* PostServices.swift in Sources */,
 				182D39F41B5F7E120059B658 /* RegisterViewController.swift in Sources */,
+				18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */,
 				18E4DC101B60B02500891D2A /* RegisterNavigation.swift in Sources */,
 				185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */,
 				18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */,

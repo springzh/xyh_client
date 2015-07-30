@@ -70,10 +70,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     func loadPosts(posts:NSArray){
         for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as NSString
+            var title = posts[i]["news_title"] as String
             var idStr = posts[i]["news_id"] as String
+            var img = UIImage(named: "Launchimage.png")
             var id = idStr.toInt()
-            var json = PostInit(id: id!, title: title)
+            var json = PostInit(id: id!, title: title, image: img!)
             self.postsCollection.append(json)
             
             dispatch_async(dispatch_get_main_queue()){
@@ -90,8 +91,9 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         for(var i = postsCount; i < postsCount + 18; i++){
             var titles = json[i]["news_title"] as String
             var idStrs = json[i]["news_id"] as String
+            var img = UIImage(named: "Launchimage.png")
             var id = idStrs.toInt()
-            var json = PostInit(id: id!, title: titles)
+            var json = PostInit(id: id!, title: titles, image: img!)
             self.postsCollection.append(json)
             dispatch_async(dispatch_get_main_queue()){
                 self.newsList.reloadData()
@@ -115,10 +117,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     func refreshPosts(posts:NSArray){
         self.postsCollection = [PostInit]()
         for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as NSString
+            var title = posts[i]["news_title"] as String
             var idStr = posts[i]["news_id"] as String
+            var img = UIImage(named: "Launchimage.png")
             var id = idStr.toInt()
-            var json = PostInit(id: id!, title: title)
+            var json = PostInit(id: id!, title: title, image: img!)
             self.postsCollection.append(json)
             dispatch_async(dispatch_get_main_queue()){
                 self.refreshControl?.endRefreshing()
@@ -158,15 +161,18 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cell = newsList.dequeueReusableCellWithIdentifier("news") as UITableViewCell
+        //var cell = newsList.dequeueReusableCellWithIdentifier("news") as UITableViewCell
+        var cell = TableViewCell()
+        tableView.addSubview(cell)
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         
         self.moreJsonData.append(postsCollection[indexPath.row] as PostInit)
         var post = postsCollection[indexPath.row] as PostInit
-        cell.textLabel?.numberOfLines = 2
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+        
         cell.textLabel?.text = post.newsTitle
         cell.textLabel?.tag = post.newsId
-        cell.textLabel?.sizeToFit()
+        cell.imageView?.image = post.newsImage
         var index = indexPath.row
         if(index == self.postsCollection.count - 1){
             self._aiv.stopAnimating()
@@ -174,6 +180,12 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
             self.loadMoreBtn.hidden = false
         }
         return cell
+    }
+    
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 40
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

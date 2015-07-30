@@ -63,14 +63,6 @@
                                 <constraint firstItem="A4Y-X0-Oor" firstAttribute="leading" secondItem="Uia-bS-wCD" secondAttribute="leadingMargin" id="qii-Mx-QMH"/>
                             </constraints>
                         </view>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="news" rowHeight="80" id="yFe-Ex-4Ux" customClass="NewsListCell" customModule="xyh_client" customModuleProvider="target">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="yFe-Ex-4Ux" id="ikJ-DH-FT9">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="KUw-QP-vwR" id="pFY-ps-FIN"/>
