@@ -29,8 +29,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         //发出http请求并通过闭包提取json数据
         self.updateNews{
-            (response) in
-            self.loadPosts(response as NSArray)
+            (response,status) in
+            self.loadPosts(response as NSArray, status: status as Int)
             self.allJson = (response as NSArray)
             
         }
@@ -59,7 +59,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-    func updateNews(callback:(NSArray)->()){
+    func updateNews(callback:(NSArray,Int)->()){
         let url = "http://xiangyouhui.cn/api/v1/articles"
         postObj.getNewsListJson(url,callback: callback)
     }
@@ -68,19 +68,24 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         self.reloadJson(json)
     }
     
-    func loadPosts(posts:NSArray){
-        for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as! String
-            var idStr = posts[i]["news_id"] as! String
-            var img = UIImage(named: "Launchimage.png")
-            var id = idStr.toInt()
-            var json = PostInit(id: id!, title: title, image: img!)
-            self.postsCollection.append(json)
-            
-            dispatch_async(dispatch_get_main_queue()){
-                self.newsList.reloadData()
-                self.tableFooterView.hidden = false
-                self.loadMoreBtn.hidden = false
+    func loadPosts(posts:NSArray, status:Int){
+        if(status == 0){
+            self.refreshControl?.attributedTitle = NSAttributedString(string: "加载失败，请检查您的网络是否正常")
+        }
+        else{
+            for(var i = 0; i < 20; i++){
+                var title = posts[i]["news_title"] as! String
+                var idStr = posts[i]["news_id"] as! String
+                var img = UIImage(named: "Launchimage.png")
+                var id = idStr.toInt()
+                var json = PostInit(id: id!, title: title, image: img!)
+                self.postsCollection.append(json)
+                
+                dispatch_async(dispatch_get_main_queue()){
+                    self.newsList.reloadData()
+                    self.tableFooterView.hidden = false
+                    self.loadMoreBtn.hidden = false
+                }
             }
         }
     }
@@ -114,21 +119,26 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         }
     }
     
-    func refreshPosts(posts:NSArray){
-        self.postsCollection = [PostInit]()
-        for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as! String
-            var idStr = posts[i]["news_id"] as! String
-            var img = UIImage(named: "Launchimage.png")
-            var id = idStr.toInt()
-            var json = PostInit(id: id!, title: title, image: img!)
-            self.postsCollection.append(json)
-            dispatch_async(dispatch_get_main_queue()){
-                self.refreshControl?.endRefreshing()
-                self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
-                self.newsList.reloadData()
-                self.tableFooterView.hidden = false
-                self.loadMoreBtn.hidden = false
+    func refreshPosts(posts:NSArray, status:Int){
+        if(status == 0){
+            self.refreshControl?.attributedTitle = NSAttributedString(string: "刷新失败，请检查您的网络是否正常")
+        }
+        else{
+            self.postsCollection = [PostInit]()
+            for(var i = 0; i < 20; i++){
+                var title = posts[i]["news_title"] as! String
+                var idStr = posts[i]["news_id"] as! String
+                var img = UIImage(named: "Launchimage.png")
+                var id = idStr.toInt()
+                var json = PostInit(id: id!, title: title, image: img!)
+                self.postsCollection.append(json)
+                dispatch_async(dispatch_get_main_queue()){
+                    self.refreshControl?.endRefreshing()
+                    self.refreshControl?.attributedTitle = NSAttributedString(string: "下拉刷新")
+                    self.newsList.reloadData()
+                    self.tableFooterView.hidden = false
+                    self.loadMoreBtn.hidden = false
+                }
             }
         }
     }
@@ -138,8 +148,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
             self.refreshControl?.attributedTitle = NSAttributedString(string: "Loading...")
         }
         self.updateNews{
-            (response) in
-            self.refreshPosts(response as NSArray)
+            (response,status) in
+            self.refreshPosts(response as NSArray,status: status as Int)
         }
     }
     

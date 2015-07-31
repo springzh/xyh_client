@@ -46,7 +46,7 @@ class PostServices{
     }
 
     //请求获取资讯列表
-    func getNewsListJson(url:String,callback:(NSArray)->()) {
+    func getNewsListJson(url:String,callback:(NSArray,Int)->()) {
         let manager = AFHTTPRequestOperationManager()
         
         manager.GET(url,
@@ -54,11 +54,13 @@ class PostServices{
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
                 var list = responseObject! as! NSArray
-                callback(list)
+                callback(list,1)
             },
             failure: { (operation: AFHTTPRequestOperation!,
                 error: NSError!) in
-                println("Error: " + error.localizedDescription)}
+                println("Error: " + error.localizedDescription)
+                callback([NSArray](), 0)
+            }
         )
         
     }
