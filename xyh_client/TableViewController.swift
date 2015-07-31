@@ -199,10 +199,12 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var newsView = segue.destinationViewController as! NewsViewController
-        var indexPath = newsList.indexPathForSelectedRow()
-        var cell = newsList.cellForRowAtIndexPath(indexPath!)
-        newsView.newsId = cell?.textLabel?.tag
+        if(segue.identifier == "newsdetail"){
+            var newsView = segue.destinationViewController as! NewsViewController
+            var indexPath = newsList.indexPathForSelectedRow()
+            var cell = newsList.cellForRowAtIndexPath(indexPath!)
+            newsView.newsId = cell?.textLabel?.tag
+        }
     }
     
 }
