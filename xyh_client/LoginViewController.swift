@@ -21,10 +21,22 @@ class LoginViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
 //    var loginDict = ["email": "123456789@qq.com", "password": "123456"]
     @IBOutlet weak var userId: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
+    //实例化默认偏好设置类
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //判断偏好设置是否为空
+        if(defaults.objectForKey("userEmail") as? String != ""){
+            loginEmail.text = defaults.objectForKey("userEmail") as? String
+            if(defaults.objectForKey("password") as? String != ""){
+                loginPassword.text = defaults.objectForKey("password") as? String
+            }
+        }
+        //初始化默认偏好设置
+        let myDefaults = ["userEmail": "", "password": ""]
+        defaults.registerDefaults(myDefaults)
         //初始化控件
         loginPassword.delegate = self
         loginPassword.keyboardType = UIKeyboardType.NumbersAndPunctuation
@@ -94,6 +106,10 @@ class LoginViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
             alert.show()
         }
         else{
+            if(checkbox.backgroundColor == UIColor.orangeColor()){
+                defaults.setObject(loginPassword.text, forKey: "password")
+            }
+            defaults.setObject(loginEmail.text, forKey: "userEmail")
             self.loginPost{
                 (response) in
                 self.returnMessage(response as NSDictionary)
