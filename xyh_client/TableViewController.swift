@@ -70,8 +70,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     func loadPosts(posts:NSArray){
         for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as String
-            var idStr = posts[i]["news_id"] as String
+            var title = posts[i]["news_title"] as! String
+            var idStr = posts[i]["news_id"] as! String
             var img = UIImage(named: "Launchimage.png")
             var id = idStr.toInt()
             var json = PostInit(id: id!, title: title, image: img!)
@@ -89,8 +89,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     func reloadJson(json:NSArray){
         var postsCount = self.postsCollection.count
         for(var i = postsCount; i < postsCount + 18; i++){
-            var titles = json[i]["news_title"] as String
-            var idStrs = json[i]["news_id"] as String
+            var titles = json[i]["news_title"] as! String
+            var idStrs = json[i]["news_id"] as! String
             var img = UIImage(named: "Launchimage.png")
             var id = idStrs.toInt()
             var json = PostInit(id: id!, title: titles, image: img!)
@@ -117,8 +117,8 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     func refreshPosts(posts:NSArray){
         self.postsCollection = [PostInit]()
         for(var i = 0; i < 20; i++){
-            var title = posts[i]["news_title"] as String
-            var idStr = posts[i]["news_id"] as String
+            var title = posts[i]["news_title"] as! String
+            var idStr = posts[i]["news_id"] as! String
             var img = UIImage(named: "Launchimage.png")
             var id = idStr.toInt()
             var json = PostInit(id: id!, title: title, image: img!)
@@ -189,7 +189,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var newsView = segue.destinationViewController as NewsViewController
+        var newsView = segue.destinationViewController as! NewsViewController
         var indexPath = newsList.indexPathForSelectedRow()
         var cell = newsList.cellForRowAtIndexPath(indexPath!)
         newsView.newsId = cell?.textLabel?.tag

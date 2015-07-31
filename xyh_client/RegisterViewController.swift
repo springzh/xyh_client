@@ -40,8 +40,8 @@ class RegisterViewController: UIViewController,UIAlertViewDelegate, UITextFieldD
     }
     
     func returnMessage(message: NSDictionary){
-        let status = message["status"] as Int
-        let error = message["error"] as NSArray
+        let status = message["status"] as! Int
+        let error = message["error"] as! NSArray
         if(status == 0){
             let alert:UIAlertView = UIAlertView(title: "信息", message: "注册失败", delegate: self, cancelButtonTitle: "OK")
             alert.tag = 3
@@ -80,7 +80,7 @@ class RegisterViewController: UIViewController,UIAlertViewDelegate, UITextFieldD
         return true
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         registerNickname.resignFirstResponder()
         registerEmail.resignFirstResponder()
         registerPassword.resignFirstResponder()

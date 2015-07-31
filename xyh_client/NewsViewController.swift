@@ -33,7 +33,7 @@ class NewsViewController: UIViewController {
         titleLabel.numberOfLines = 2
         titleLabel.lineBreakMode = NSLineBreakMode.ByWordWrapping
         titleLabel.sizeToFit()
-        var content = news["news_content"] as String
+        var content = news["news_content"] as! String
         webView.loadHTMLString(content, baseURL: nil)
     }
     

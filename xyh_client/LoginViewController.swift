@@ -50,8 +50,8 @@ class LoginViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
     }
     
     func returnMessage(message: NSDictionary){
-        let status = message["status"] as Int
-        let error = message["error"] as NSArray
+        let status = message["status"] as! Int
+        let error = message["error"] as! NSArray
         if(status == 0){
             let alert:UIAlertView = UIAlertView(title: "信息", message: "登录失败，email不存在或密码错误", delegate: self, cancelButtonTitle: "OK")
             alert.tag = 3
@@ -106,7 +106,8 @@ class LoginViewController: UIViewController, UIAlertViewDelegate, UITextFieldDel
         return true
     }
     //委托方法，点击空白地方退出键盘
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         loginEmail.resignFirstResponder()
         loginPassword.resignFirstResponder()
     }

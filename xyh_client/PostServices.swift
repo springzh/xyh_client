@@ -18,8 +18,8 @@ class PostServices{
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                var json = responseObject! as NSDictionary
-                var list = json["news"] as NSDictionary
+                var json = responseObject! as! NSDictionary
+                var list = json["news"] as! NSDictionary
                 callback(list)
             },
             failure: { (operation: AFHTTPRequestOperation!,
@@ -36,7 +36,7 @@ class PostServices{
             parameters: params,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                var json = responseObject! as NSDictionary
+                var json = responseObject! as! NSDictionary
                 callback(json)
             },
             failure: { (operation: AFHTTPRequestOperation!,
@@ -53,7 +53,7 @@ class PostServices{
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,
                 responseObject: AnyObject!) in
-                var list = responseObject! as NSArray
+                var list = responseObject! as! NSArray
                 callback(list)
             },
             failure: { (operation: AFHTTPRequestOperation!,
