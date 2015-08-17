@@ -19,6 +19,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     var postsCollection = [PostInit]()
     var moreJsonData = [PostInit]()
     var allJson: NSArray!
+    var header: UIView!
     //加载更多，状态，风火轮
     
     @IBOutlet weak var _aiv: UIActivityIndicatorView!
@@ -27,6 +28,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //发出http请求并通过闭包提取json数据
         self.updateNews{
             (response,status) in
@@ -45,6 +47,16 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         self.refreshControl?.attributedTitle = NSAttributedString(string: "加载中......")
         self.refreshControl?.tintColor = UIColor.greenColor()
         self.refreshControl?.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+        //初始化tableheaderview
+        header = UIView(frame: CGRectMake(0, 0, 400, 22))
+        header.backgroundColor = UIColor.whiteColor()
+        header.hidden = true
+        newsList.tableHeaderView = header
+        var headerBtn = UIButton(frame: CGRectMake(5, 2, 365, 20))
+        headerBtn.setTitle("点击添加城市", forState: UIControlState.Normal)
+        headerBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        headerBtn.addTarget(self, action: "addCity:", forControlEvents: UIControlEvents.TouchUpInside)
+        header.addSubview(headerBtn)
         //加载更多按钮背景视图
         tableFooterView.hidden = true
         //加载更多按钮
@@ -57,6 +69,11 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func addCity(sender:AnyObject){
+        var cityView = CityTableViewController()
+        self.presentViewController(cityView, animated: false, completion: nil)
     }
     
     func updateNews(callback:(NSArray,Int)->()){
@@ -84,6 +101,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
                 dispatch_async(dispatch_get_main_queue()){
                     self.newsList.reloadData()
                     self.tableFooterView.hidden = false
+                    self.header.hidden = false
                     self.loadMoreBtn.hidden = false
                 }
             }
@@ -173,7 +191,6 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         //var cell = newsList.dequeueReusableCellWithIdentifier("news") as UITableViewCell
         var cell = TableViewCell()
-        tableView.addSubview(cell)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         

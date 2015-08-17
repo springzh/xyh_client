@@ -10,26 +10,41 @@ import UIKit
 
 class RegisterViewController: UIViewController,UIAlertViewDelegate, UITextFieldDelegate {
     
-    @IBOutlet weak var registerNickname: UITextField!
-    @IBOutlet weak var registerEmail: UITextField!
+    @IBOutlet weak var registerText1: UITextField!
+    @IBOutlet weak var registerText2: UITextField!
     @IBOutlet weak var registerPassword: UITextField!
+    @IBOutlet weak var verificationCode: UIButton!
+    var segmentIndex:Int = 0
+    var timerCount:UILabel!
+    var timer:NSTimer!
+    var seconds = 60
+    @IBOutlet weak var segment: UISegmentedControl!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        registerNickname.delegate = self
-        registerNickname.keyboardType = UIKeyboardType.Default
-        registerNickname.placeholder = "请输入昵称"
-        registerNickname.returnKeyType = UIReturnKeyType.Done
-        registerNickname.clearButtonMode = UITextFieldViewMode.WhileEditing
-        registerEmail.delegate = self
-        registerEmail.keyboardType = UIKeyboardType.Default
-        registerEmail.placeholder = "请输入希望注册的邮箱"
-        registerEmail.returnKeyType = UIReturnKeyType.Done
-        registerEmail.clearButtonMode = UITextFieldViewMode.WhileEditing
+        var timerCountFrame = CGRectMake(CGRectGetMidX(verificationCode.frame) + 70, CGRectGetMaxY(verificationCode.frame) - 10, 40, 20)
+        timerCount = UILabel(frame: timerCountFrame)
+        timerCount.hidden = true
+        verificationCode.addSubview(timerCount)
+        registerText1.placeholder = "请输入您的手机号码"
+        registerText2.placeholder = "请输入输入验证码"
+        registerPassword.placeholder = "设置你的密码"
+        verificationCode.setTitle("获取验证码", forState: .Normal)
+        verificationCode.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+        verificationCode.tintColor = UIColor.blackColor()
+        verificationCode.backgroundColor = UIColor.grayColor()
+        registerText1.delegate = self
+        registerText1.keyboardType = UIKeyboardType.NumberPad
+        registerText1.returnKeyType = UIReturnKeyType.Done
+        registerText1.clearButtonMode = UITextFieldViewMode.WhileEditing
+        registerText2.delegate = self
+        registerText2.keyboardType = UIKeyboardType.NumberPad
+        registerText2.returnKeyType = UIReturnKeyType.Done
+        registerText2.clearButtonMode = UITextFieldViewMode.WhileEditing
         registerPassword.delegate = self
         registerPassword.secureTextEntry = true
         registerPassword.keyboardType = UIKeyboardType.NumbersAndPunctuation
-        registerPassword.placeholder = "请输入8位以上密码"
         registerPassword.returnKeyType = UIReturnKeyType.Done
         registerPassword.clearButtonMode = UITextFieldViewMode.WhileEditing
     }
@@ -55,15 +70,71 @@ class RegisterViewController: UIViewController,UIAlertViewDelegate, UITextFieldD
         }
     }
     
+    func timerFireMethod(timer: NSTimer){
+        if(self.seconds == 0){
+            //设置按钮文字居中
+            verificationCode.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Center
+            self.timerCount.hidden = true
+            segment.userInteractionEnabled = true
+            self.seconds = 60
+            timer.invalidate()
+            verificationCode.enabled = true
+            verificationCode.setTitle("获取验证码", forState: .Normal)
+        }
+        else{
+            //设置按钮文字居左，并设置文字与左边框的距离为10
+            verificationCode.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+            verificationCode.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+            self.seconds--
+            verificationCode.enabled = false
+            verificationCode.setTitle("重新获取", forState: .Disabled)
+            self.timerCount.hidden = false
+            self.timerCount.text = "\(self.seconds)"
+        }
+    }
+    
+    @IBAction func getVerification(sender: AnyObject) {
+        if(self.segmentIndex == 0){
+            //设置分段按钮不可用
+            segment.userInteractionEnabled = false
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerFireMethod:", userInfo: nil, repeats: true)
+        }
+        else{
+        }
+    }
+    
+    @IBAction func choiceWay(sender: UISegmentedControl) {
+        self.segmentIndex = sender.selectedSegmentIndex
+        switch sender.selectedSegmentIndex{
+        case 0:
+            registerText1.placeholder = "请输入您的手机号码"
+            registerText2.placeholder = "请输入输入验证码"
+            registerPassword.placeholder = "设置你的密码"
+            verificationCode.setTitle("获取验证码", forState: .Normal)
+        case 1:
+            registerText1.placeholder = "请输入您的Email"
+            registerText2.placeholder = "请输入验证码"
+            registerPassword.placeholder = "设置你的密码"
+            verificationCode.setTitle("发送激活邮件", forState: .Normal)
+            registerText1.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        default:
+            registerText1.placeholder = "请输入您的手机号码"
+            registerText2.placeholder = "请输入输入验证码"
+            registerPassword.placeholder = "设置你的密码"
+            verificationCode.setTitle("获取验证码", forState: .Normal)
+        }
+    }
+    
+    
     func registerPost(callback:(NSDictionary)->()){
-        var params:NSDictionary = ["email":registerEmail.text,"nick_name":registerNickname.text,"password":registerPassword.text]
+        var params:NSDictionary = ["email":registerText2.text,"nick_name":registerText1.text,"password":registerPassword.text]
         var url = "http://xiangyouhui.cn/api/v1/register"
         var register = PostServices()
         register.userDataPost(url, params: params, callback: callback)
     }
     
     @IBAction func registerSubmit(sender: AnyObject) {
-        if(registerNickname.text == "" || registerEmail.text == "" || registerPassword.text == ""){
+        if(registerText1.text == "" || registerText2.text == "" || registerPassword.text == ""){
             let alert:UIAlertView = UIAlertView(title: "提示", message: "注册信息不能为空", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
@@ -81,8 +152,8 @@ class RegisterViewController: UIViewController,UIAlertViewDelegate, UITextFieldD
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        registerNickname.resignFirstResponder()
-        registerEmail.resignFirstResponder()
+        registerText1.resignFirstResponder()
+        registerText2.resignFirstResponder()
         registerPassword.resignFirstResponder()
     }
     

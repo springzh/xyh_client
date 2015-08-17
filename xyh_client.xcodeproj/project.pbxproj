@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39C91B5F5E680059B658 /* AppDelegate.swift */; };
 		182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182D39CD1B5F5E680059B658 /* Main.storyboard */; };
-		182D39D41B5F5E680059B658 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182D39D21B5F5E680059B658 /* LaunchScreen.xib */; };
 		182D39E01B5F5E680059B658 /* xyh_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39DF1B5F5E680059B658 /* xyh_clientTests.swift */; };
 		182D39EE1B5F63B40059B658 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182D39ED1B5F63B40059B658 /* SWRevealViewController.m */; };
 		182D39F21B5F6C470059B658 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39F11B5F6C470059B658 /* TableViewController.swift */; };
@@ -19,6 +18,8 @@
 		182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 182D39FC1B5F97E90059B658 /* LaunchImage.png */; };
 		182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D3A001B5FA1900059B658 /* SearchViewController.swift */; };
 		185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185705E31B65D9D4009BC0B4 /* NewsViewController.swift */; };
+		1859372A1B6F09A5003D043A /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185937291B6F09A5003D043A /* CityTableViewController.swift */; };
+		1859372C1B6F2B4E003D043A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */; };
 		185EBB4EDA67E430B47D566F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A585EA81789F404348EE0C55 /* libPods.a */; };
 		18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B817471B69C2AF0075096D /* TableViewCell.swift */; };
 		18CF446B1B64B3650004501C /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF446A1B64B3650004501C /* PostServices.swift */; };
@@ -45,7 +46,6 @@
 		182D39C81B5F5E680059B658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182D39C91B5F5E680059B658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182D39CE1B5F5E680059B658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		182D39D31B5F5E680059B658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		182D39D91B5F5E680059B658 /* xyh_clientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = xyh_clientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182D39DE1B5F5E680059B658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182D39DF1B5F5E680059B658 /* xyh_clientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xyh_clientTests.swift; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		182D39FC1B5F97E90059B658 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		182D3A001B5FA1900059B658 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		185705E31B65D9D4009BC0B4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		185937291B6F09A5003D043A /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
+		1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		18B817471B69C2AF0075096D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		18CF446A1B64B3650004501C /* PostServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
 		18E4DC091B60A1EB00891D2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -119,9 +121,10 @@
 				182D39EA1B5F63320059B658 /* SWRevealViewController */,
 				182D39C91B5F5E680059B658 /* AppDelegate.swift */,
 				182D39CD1B5F5E680059B658 /* Main.storyboard */,
-				182D39D21B5F5E680059B658 /* LaunchScreen.xib */,
 				182D39C71B5F5E680059B658 /* Supporting Files */,
 				182D39F11B5F6C470059B658 /* TableViewController.swift */,
+				185937291B6F09A5003D043A /* CityTableViewController.swift */,
+				1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */,
 				182D39F31B5F7E120059B658 /* RegisterViewController.swift */,
 				182D39F51B5F7E210059B658 /* LoginViewController.swift */,
 				182D3A001B5FA1900059B658 /* SearchViewController.swift */,
@@ -283,7 +286,6 @@
 				182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */,
 				18E4DC0A1B60A1EB00891D2A /* Images.xcassets in Resources */,
 				182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */,
-				182D39D41B5F5E680059B658 /* LaunchScreen.xib in Resources */,
 				182D39FB1B5F96100059B658 /* hamburgerbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1859372C1B6F2B4E003D043A /* CityTableViewCell.swift in Sources */,
 				182D39F61B5F7E210059B658 /* LoginViewController.swift in Sources */,
 				18E4DC0E1B60AE7300891D2A /* LoginNavigation.swift in Sources */,
 				182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */,
@@ -343,6 +346,7 @@
 				18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */,
 				18E4DC101B60B02500891D2A /* RegisterNavigation.swift in Sources */,
 				185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */,
+				1859372A1B6F09A5003D043A /* CityTableViewController.swift in Sources */,
 				18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */,
 				182D39F21B5F6C470059B658 /* TableViewController.swift in Sources */,
 				182D39EE1B5F63B40059B658 /* SWRevealViewController.m in Sources */,
@@ -377,14 +381,6 @@
 				182D39CE1B5F5E680059B658 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		182D39D21B5F5E680059B658 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				182D39D31B5F5E680059B658 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
