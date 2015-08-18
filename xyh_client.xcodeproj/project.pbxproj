@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181085141B82F9F400FA523B /* news_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 181085131B82F9F400FA523B /* news_icon.png */; };
+		1810851A1B82FAA600FA523B /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = 181085191B82FAA600FA523B /* people.png */; };
 		182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39C91B5F5E680059B658 /* AppDelegate.swift */; };
 		182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182D39CD1B5F5E680059B658 /* Main.storyboard */; };
 		182D39E01B5F5E680059B658 /* xyh_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D39DF1B5F5E680059B658 /* xyh_clientTests.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181085131B82F9F400FA523B /* news_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_icon.png; sourceTree = "<group>"; };
+		181085191B82FAA600FA523B /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		182D39C41B5F5E680059B658 /* xyh_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xyh_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182D39C81B5F5E680059B658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182D39C91B5F5E680059B658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 		182D39F91B5F95D50059B658 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				181085191B82FAA600FA523B /* people.png */,
+				181085131B82F9F400FA523B /* news_icon.png */,
 				182D39FC1B5F97E90059B658 /* LaunchImage.png */,
 				182D39FA1B5F96100059B658 /* hamburgerbutton.png */,
 			);
@@ -288,6 +294,8 @@
 			files = (
 				182D39CF1B5F5E680059B658 /* Main.storyboard in Resources */,
 				18E4DC0A1B60A1EB00891D2A /* Images.xcassets in Resources */,
+				1810851A1B82FAA600FA523B /* people.png in Resources */,
+				181085141B82F9F400FA523B /* news_icon.png in Resources */,
 				182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */,
 				182D39FB1B5F96100059B658 /* hamburgerbutton.png in Resources */,
 			);
