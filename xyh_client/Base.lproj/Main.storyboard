@@ -209,9 +209,6 @@
                     <navigationItem key="navigationItem" title="搜索" id="SPA-0l-Pv3">
                         <barButtonItem key="leftBarButtonItem" title="返回" id="tI5-fh-ohL">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="6NV-Lc-mPz" kind="unwind" unwindAction="backToTableinView:" id="tTl-Ve-bWM"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -234,7 +231,7 @@
         <scene sceneID="Bor-UP-SZe">
             <objects>
                 <navigationController title="资讯导航" id="I5o-Fb-UDa" customClass="TableNavigation" customModule="xyh_client" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="资讯" image="new_icon.png" id="9Oq-hL-O7r"/>
+                    <tabBarItem key="tabBarItem" title="资讯" image="news_icon.png" id="9Oq-hL-O7r"/>
                     <navigationItem key="navigationItem" id="J8q-9l-CQs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="53x-G7-pnV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -855,7 +852,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="当前位置" id="iHi-xq-q8w">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="01a-04-F2h"/>
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="01a-04-F2h">
+                            <connections>
+                                <segue destination="6NV-Lc-mPz" kind="unwind" unwindAction="backToTableinView:" id="k6K-KG-mfs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Lt9-Mq-jch" id="Gg6-PO-Kdf"/>
@@ -886,7 +887,7 @@
     </scenes>
     <resources>
         <image name="hamburgerbutton.png" width="32" height="32"/>
-        <image name="new_icon.png" width="43" height="31"/>
+        <image name="news_icon.png" width="43" height="31"/>
         <image name="people.png" width="64" height="64"/>
     </resources>
 </document>

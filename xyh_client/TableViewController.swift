@@ -71,9 +71,9 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-    func addCity(sender:AnyObject){
-        var cityView = CityTableViewController()
-        self.presentViewController(cityView, animated: false, completion: nil)
+    func mapLocation(sender:AnyObject){
+        var mapView = MapViewController()
+        self.presentViewController(mapView, animated: false, completion: nil)
     }
     
     func updateNews(callback:(NSArray,Int)->()){
