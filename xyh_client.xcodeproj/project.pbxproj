@@ -23,6 +23,7 @@
 		1859372A1B6F09A5003D043A /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185937291B6F09A5003D043A /* CityTableViewController.swift */; };
 		1859372C1B6F2B4E003D043A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */; };
 		185EBB4EDA67E430B47D566F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A585EA81789F404348EE0C55 /* libPods.a */; };
+		1881EB8E1B84087B004F0B63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881EB8D1B84087B004F0B63 /* MapViewController.swift */; };
 		18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B817471B69C2AF0075096D /* TableViewCell.swift */; };
 		18CF446B1B64B3650004501C /* PostServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF446A1B64B3650004501C /* PostServices.swift */; };
 		18DC8D641B81D184007182A9 /* ScrollPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC8D631B81D184007182A9 /* ScrollPageController.swift */; };
@@ -66,6 +67,7 @@
 		185705E31B65D9D4009BC0B4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		185937291B6F09A5003D043A /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		1881EB8D1B84087B004F0B63 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18B817471B69C2AF0075096D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		18CF446A1B64B3650004501C /* PostServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
 		18DC8D631B81D184007182A9 /* ScrollPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPageController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				182D39C71B5F5E680059B658 /* Supporting Files */,
 				182D39F11B5F6C470059B658 /* TableViewController.swift */,
 				18DC8D631B81D184007182A9 /* ScrollPageController.swift */,
+				1881EB8D1B84087B004F0B63 /* MapViewController.swift */,
 				185937291B6F09A5003D043A /* CityTableViewController.swift */,
 				1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */,
 				182D39F31B5F7E120059B658 /* RegisterViewController.swift */,
@@ -361,6 +364,7 @@
 				18DC8D641B81D184007182A9 /* ScrollPageController.swift in Sources */,
 				18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */,
 				182D39F21B5F6C470059B658 /* TableViewController.swift in Sources */,
+				1881EB8E1B84087B004F0B63 /* MapViewController.swift in Sources */,
 				182D39EE1B5F63B40059B658 /* SWRevealViewController.m in Sources */,
 				18E4DC121B60B0E800891D2A /* SearchNavigation.swift in Sources */,
 				182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */,
