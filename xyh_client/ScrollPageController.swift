@@ -12,11 +12,11 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
 
     var scrollView: UIScrollView!
     
-    var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: UIPageControl!
     var colors:[UIColor] = [UIColor.redColor(), UIColor.blueColor(), UIColor.greenColor(), UIColor.yellowColor()]
     var frame: CGRect = CGRectMake(0, 0, 0, 0)
     var timer: NSTimer!
-    var goToNewsBtn: UIButton!
+    @IBOutlet weak var goToNewsBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView = UIScrollView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
@@ -24,24 +24,16 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
         //不显示垂直和水平滚动条
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        self.pageControl = UIPageControl(frame: CGRectMake(150, 600, 100, 40))
-        self.pageControl.defersCurrentPageDisplay = true
-        self.pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
-        self.pageControl.pageIndicatorTintColor = UIColor.grayColor()
-        self.pageControl.numberOfPages = self.colors.count
-        self.pageControl.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        goToNewsBtn = UIButton(frame: CGRectMake(145, 550, 100, 44))
+        pageControl.defersCurrentPageDisplay = true
+        pageControl.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        pageControl.numberOfPages = self.colors.count
         goToNewsBtn.hidden = true
-        goToNewsBtn.setTitle("立即体验", forState: .Normal)
-        goToNewsBtn.setTitleColor(UIColor.blackColor(), forState: .Normal)
         goToNewsBtn.addTarget(self, action: "goNewsList:", forControlEvents: UIControlEvents.TouchUpInside)
         goToNewsBtn.layer.borderWidth = 2
         goToNewsBtn.layer.cornerRadius = 10
         goToNewsBtn.tintColor = UIColor.blackColor()
         goToNewsBtn.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(scrollView)
-        self.view.addSubview(pageControl)
-        self.view.addSubview(goToNewsBtn)
         for index in 0..<colors.count {
             
             //设置每个页面起点位置
@@ -67,7 +59,7 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
     }
     
     func autoScroll(timers: NSTimer){
-        var i = self.pageControl.currentPage
+        var i = pageControl.currentPage
         if(i == colors.count - 1){
             timer.invalidate()
         }
@@ -83,7 +75,7 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        self.pageControl.updateCurrentPageDisplay()
+        pageControl.updateCurrentPageDisplay()
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
