@@ -20,8 +20,6 @@
 		182D39FD1B5F97E90059B658 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 182D39FC1B5F97E90059B658 /* LaunchImage.png */; };
 		182D3A011B5FA1900059B658 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182D3A001B5FA1900059B658 /* SearchViewController.swift */; };
 		185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185705E31B65D9D4009BC0B4 /* NewsViewController.swift */; };
-		1859372A1B6F09A5003D043A /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185937291B6F09A5003D043A /* CityTableViewController.swift */; };
-		1859372C1B6F2B4E003D043A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */; };
 		185EBB4EDA67E430B47D566F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A585EA81789F404348EE0C55 /* libPods.a */; };
 		1881EB8E1B84087B004F0B63 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881EB8D1B84087B004F0B63 /* MapViewController.swift */; };
 		18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B817471B69C2AF0075096D /* TableViewCell.swift */; };
@@ -65,8 +63,6 @@
 		182D39FC1B5F97E90059B658 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		182D3A001B5FA1900059B658 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		185705E31B65D9D4009BC0B4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
-		185937291B6F09A5003D043A /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
-		1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		1881EB8D1B84087B004F0B63 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		18B817471B69C2AF0075096D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		18CF446A1B64B3650004501C /* PostServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostServices.swift; sourceTree = "<group>"; };
@@ -133,8 +129,6 @@
 				182D39F11B5F6C470059B658 /* TableViewController.swift */,
 				18DC8D631B81D184007182A9 /* ScrollPageController.swift */,
 				1881EB8D1B84087B004F0B63 /* MapViewController.swift */,
-				185937291B6F09A5003D043A /* CityTableViewController.swift */,
-				1859372B1B6F2B4E003D043A /* CityTableViewCell.swift */,
 				182D39F31B5F7E120059B658 /* RegisterViewController.swift */,
 				182D39F51B5F7E210059B658 /* LoginViewController.swift */,
 				182D3A001B5FA1900059B658 /* SearchViewController.swift */,
@@ -351,7 +345,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1859372C1B6F2B4E003D043A /* CityTableViewCell.swift in Sources */,
 				182D39F61B5F7E210059B658 /* LoginViewController.swift in Sources */,
 				18E4DC0E1B60AE7300891D2A /* LoginNavigation.swift in Sources */,
 				182D39CA1B5F5E680059B658 /* AppDelegate.swift in Sources */,
@@ -360,7 +353,6 @@
 				18B817481B69C2AF0075096D /* TableViewCell.swift in Sources */,
 				18E4DC101B60B02500891D2A /* RegisterNavigation.swift in Sources */,
 				185705E41B65D9D4009BC0B4 /* NewsViewController.swift in Sources */,
-				1859372A1B6F09A5003D043A /* CityTableViewController.swift in Sources */,
 				18DC8D641B81D184007182A9 /* ScrollPageController.swift in Sources */,
 				18E4DC141B60B7D200891D2A /* MenuController.swift in Sources */,
 				182D39F21B5F6C470059B658 /* TableViewController.swift in Sources */,

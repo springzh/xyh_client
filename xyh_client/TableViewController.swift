@@ -53,9 +53,9 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         header.hidden = true
         newsList.tableHeaderView = header
         var headerBtn = UIButton(frame: CGRectMake(5, 2, 365, 20))
-        headerBtn.setTitle("点击添加城市", forState: UIControlState.Normal)
+        headerBtn.setTitle("点击定位当前位置", forState: UIControlState.Normal)
         headerBtn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        headerBtn.addTarget(self, action: "addCity:", forControlEvents: UIControlEvents.TouchUpInside)
+        headerBtn.addTarget(self, action: "mapLocation:", forControlEvents: UIControlEvents.TouchUpInside)
         header.addSubview(headerBtn)
         //加载更多按钮背景视图
         tableFooterView.hidden = true
@@ -73,7 +73,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
     
     func mapLocation(sender:AnyObject){
         var mapView = MapViewController()
-        self.presentViewController(mapView, animated: false, completion: nil)
+        self.presentViewController(mapView, animated: true, completion: nil)
     }
     
     func updateNews(callback:(NSArray,Int)->()){

@@ -108,7 +108,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwM-FG-oxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6NV-Lc-mPz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1875" y="-410"/>
         </scene>
@@ -804,85 +803,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIq-Bp-uFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2620.5" y="-410"/>
-        </scene>
-        <!--当前位置-->
-        <scene sceneID="PNK-eN-OIe">
-            <objects>
-                <viewController storyboardIdentifier="MapView" id="oey-5H-9OT" customClass="MapViewController" customModule="xyh_client" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K43-eA-KLO"/>
-                        <viewControllerLayoutGuide type="bottom" id="cmy-Og-mbe"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6dv-Jm-JvA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lt9-Mq-jch">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Lt9-Mq-jch" firstAttribute="bottom" secondItem="cmy-Og-mbe" secondAttribute="top" id="GhC-Ce-6sK"/>
-                            <constraint firstItem="Lt9-Mq-jch" firstAttribute="top" secondItem="K43-eA-KLO" secondAttribute="bottom" id="QK9-iH-faA"/>
-                            <constraint firstAttribute="trailing" secondItem="Lt9-Mq-jch" secondAttribute="trailing" id="YZX-mh-o5k"/>
-                            <constraint firstItem="Lt9-Mq-jch" firstAttribute="leading" secondItem="6dv-Jm-JvA" secondAttribute="leading" id="u3a-gE-bHD"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Lt9-Mq-jch"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="GhC-Ce-6sK"/>
-                                <exclude reference="QK9-iH-faA"/>
-                                <exclude reference="YZX-mh-o5k"/>
-                                <exclude reference="u3a-gE-bHD"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Lt9-Mq-jch"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="GhC-Ce-6sK"/>
-                                <include reference="QK9-iH-faA"/>
-                                <include reference="YZX-mh-o5k"/>
-                                <include reference="u3a-gE-bHD"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="当前位置" id="iHi-xq-q8w">
-                        <barButtonItem key="leftBarButtonItem" title="返回" id="01a-04-F2h">
-                            <connections>
-                                <segue destination="6NV-Lc-mPz" kind="unwind" unwindAction="backToTableinView:" id="k6K-KG-mfs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="mapView" destination="Lt9-Mq-jch" id="Gg6-PO-Kdf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gpl-Ic-SeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3538.5" y="320"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QrR-kZ-qbM">
-            <objects>
-                <navigationController storyboardIdentifier="MapNav" automaticallyAdjustsScrollViewInsets="NO" id="x9d-mt-S9y" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="676-Dc-uM4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oey-5H-9OT" kind="relationship" relationship="rootViewController" id="6Pp-e2-G2i"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EMn-Tc-UUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2620.5" y="320"/>
         </scene>
     </scenes>
     <resources>

@@ -12,11 +12,23 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
-
-    @IBOutlet weak var mapView: MKMapView!
+    var mapView: MKMapView!
+    var mapNav: UINavigationBar!
+    var mapNavItem = UINavigationItem(title: "当前位置")
+    var mapFrame = CGRectMake(0, 65, 378, 620)
+    var navBarFrame = CGRectMake(0, 0, 378, 65)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //初始化UI
+        mapNav = UINavigationBar(frame: navBarFrame)
+        mapNav.barTintColor = UIColor.orangeColor()
+        mapNav.pushNavigationItem(mapNavItem, animated: true)
+        mapNavItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.Plain, target: self, action: "backNewsList")
+        mapNavItem.leftBarButtonItem?.tintColor = UIColor.blackColor()
+        mapView = MKMapView(frame: mapFrame)
+        self.view.addSubview(mapNav)
+        self.view.addSubview(mapView)
         // Do any additional setup after loading the view.
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -30,6 +42,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.mapType = MKMapType.Standard
     }
     
+    func backNewsList(){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         var location:CLLocation = locations[locations.count-1] as! CLLocation
         
@@ -37,7 +53,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             println(location.coordinate.latitude)
             println(location.coordinate.longitude)
             var coor2d = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            var span = MKCoordinateSpan(latitudeDelta: 5, longitudeDelta: 5)
+            //定义位置信息范围，越小地图显示越详细
+            var span = MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0)
             var region = MKCoordinateRegion(center: coor2d, span: span)
             mapView.setRegion(region, animated: true)
             locationManager.stopUpdatingLocation()
