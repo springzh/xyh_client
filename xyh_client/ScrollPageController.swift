@@ -21,6 +21,7 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView = UIScrollView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))
         self.scrollView.delegate = self
+        self.scrollView.bounces = false
         //不显示垂直和水平滚动条
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
@@ -49,7 +50,7 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
         self.pageControl.currentPage = Int(current)
         //设置滚动视图总的宽度,以限定边界
         self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * CGFloat(colors.count), self.scrollView.frame.size.height)
-        timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "autoScroll:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "autoScroll:", userInfo: nil, repeats: true)
     }
     
     func goNewsList(sender: AnyObject!){
@@ -71,7 +72,7 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         //重新添加定时器
-        timer = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: "autoScroll:", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "autoScroll:", userInfo: nil, repeats: true)
     }
     
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {

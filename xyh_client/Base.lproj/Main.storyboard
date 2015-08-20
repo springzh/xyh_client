@@ -72,10 +72,10 @@
                                 <exclude reference="bpV-C7-wwz"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="szJ-H8-n0u"/>
+                                <exclude reference="ioc-4L-dBb"/>
                                 <exclude reference="4b3-uQ-0Db"/>
                                 <exclude reference="qI2-m8-Fuw"/>
-                                <exclude reference="ioc-4L-dBb"/>
-                                <exclude reference="szJ-H8-n0u"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -84,10 +84,10 @@
                                 <include reference="bpV-C7-wwz"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="szJ-H8-n0u"/>
+                                <include reference="ioc-4L-dBb"/>
                                 <include reference="4b3-uQ-0Db"/>
                                 <include reference="qI2-m8-Fuw"/>
-                                <include reference="ioc-4L-dBb"/>
-                                <include reference="szJ-H8-n0u"/>
                             </mask>
                         </variation>
                     </view>

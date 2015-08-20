@@ -191,6 +191,7 @@ class TableViewController: UITableViewController, UITableViewDataSource, UITable
         
         //var cell = newsList.dequeueReusableCellWithIdentifier("news") as UITableViewCell
         var cell = TableViewCell()
+        cell.separatorInset = UIEdgeInsetsMake(0, -30, 0, -50)
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.ByTruncatingTail
         
