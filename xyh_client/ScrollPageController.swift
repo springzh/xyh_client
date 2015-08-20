@@ -90,6 +90,9 @@ class ScrollPageController: UIViewController, UIScrollViewDelegate {
         if(self.pageControl.currentPage == colors.count - 1){
             self.goToNewsBtn.hidden = false
         }
+        else{
+            self.goToNewsBtn.hidden = true
+        }
     }
     
     override func didReceiveMemoryWarning() {

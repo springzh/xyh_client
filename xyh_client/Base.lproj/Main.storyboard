@@ -184,6 +184,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YwM-FG-oxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="djA-o9-wrj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1875" y="-410"/>
         </scene>
@@ -284,6 +285,9 @@
                     <navigationItem key="navigationItem" title="搜索" id="SPA-0l-Pv3">
                         <barButtonItem key="leftBarButtonItem" title="返回" id="tI5-fh-ohL">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="djA-o9-wrj" kind="unwind" unwindAction="backToTableinView:" id="Me9-LS-IBg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
